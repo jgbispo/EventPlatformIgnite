@@ -1,6 +1,37 @@
 import {Logo} from "../components/Logo";
+import {FormEvent, useState} from "react";
+import {gql, useMutation} from "@apollo/client";
+import {useNavigate} from "react-router-dom";
+
+
+const CREATE_SUBSCRIBE = gql(`
+mutation MyMutation ($name: String!, $email: String!){
+  createSubscriber(data: {name: $name, email: $email}) {
+    id
+  }
+}`)
 
 export function Subscribe() {
+    const navigate = useNavigate();
+
+    const [name, setName] = useState('')
+    const [email, setEmail] = useState('')
+
+    const [createSubscriber, {loading}] = useMutation(CREATE_SUBSCRIBE)
+
+    async function handleSubscribe(event: FormEvent) {
+        event.preventDefault()
+
+        await createSubscriber({
+            variables: {
+                name,
+                email
+            }
+        })
+
+        navigate('/event/lesson/opening')
+    }
+
     return (
         <div className="min-h-screen bg-blur bg-cover bg-no-repeat flex flex-col items-center">
             <div className="max-w-[1100px] w-full flex items-center justify-between mt-20 mx-auto">
@@ -17,27 +48,32 @@ export function Subscribe() {
                 </div>
                 <div className="p-8 bg-gray-700 border border-gray-500 rounded min-w-[391px]">
                     <strong className="uppercase text-2xl mb-6 block">sign up for free</strong>
-                    <form className="flex flex-col gap-2 w-full">
+                    <form onSubmit={handleSubscribe} className="flex flex-col gap-2 w-full">
                         <input
                             type="text"
                             placeholder="You name complete"
                             className="bg-gray-900 rounded px-5 h-14"
+                            onChange={event => setName(event.target.value)}
                         />
                         <input
-                            type="text"
+                            type="email"
                             placeholder="You e-mail"
                             className="bg-gray-900 rounded px-5 h-14"
+                            onChange={event => setEmail(event.target.value)}
                         />
                         <button
                             type="submit"
-                            className="mt-4 bg-gray-500 uppercase py-4 rounded font-bold text-sm hover:bg-green-700 transition-colors"
+                            disabled={loading}
+                            className="mt-4 bg-gray-500 uppercase py-4 rounded font-bold text-sm hover:bg-green-700 transition-colors disabled:opacity-50"
                         >
                             Subscribe
                         </button>
                     </form>
                 </div>
             </div>
-            <img src="https://user-images.githubusercontent.com/83095574/175466234-318a413f-cf10-4faf-a965-730d94f6afa0.png" className="mt-10" alt="bg-code.png"/>
+            <img
+                src="https://user-images.githubusercontent.com/83095574/175466234-318a413f-cf10-4faf-a965-730d94f6afa0.png"
+                className="mt-10" alt="bg-code.png"/>
         </div>
     )
 }
