@@ -99,8 +99,10 @@ export function Video(props: VideoProps) {
                 </div>
                 {/*Cards*/}
                 <div className="gap-8 mt-20 grid grid-cols-2 flex">
-                    <a href="#"
-                       className="bg-gray-700 rounded overflow-hidden flex items-stretch gap-6 hover:bg-gray-600 transition-colors">
+                    <a href="https://efficient-sloth-d85.notion.site/Material-complementar-86d4ef35af16471ebc3ae3eba1a378e5"
+                       target="_blank"
+                       className="bg-gray-700 rounded overflow-hidden flex items-stretch gap-6 hover:bg-gray-600 transition-colors"
+                    >
                         <div className="bg-green-700 h-full p-6 flex items-center">
                             <FileArrowDown size={40}/>
                         </div>
@@ -112,8 +114,10 @@ export function Video(props: VideoProps) {
                             <CaretRight size={24}/>
                         </div>
                     </a>
-                    <a href="#"
-                       className="bg-gray-700 rounded overflow-hidden flex items-stretch gap-6 hover:bg-gray-600 transition-colors">
+                    <a href="https://drive.google.com/drive/folders/1mxWnvlqmH7MbVRv2Na9xFNgCQCygM1iR"
+                       target="_blank"
+                       className="bg-gray-700 rounded overflow-hidden flex items-stretch gap-6 hover:bg-gray-600 transition-colors"
+                    >
                         <div className="bg-green-700 h-full p-6 flex items-center">
                             <Image size={40}/>
                         </div>
