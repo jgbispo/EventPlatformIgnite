@@ -1,10 +1,11 @@
 import {Route, Routes} from "react-router-dom";
 import {EventPage} from "./pages/EventPage";
+import {Subscribe} from "./pages/Subscribe";
 
 export function Router() {
     return (
         <Routes>
-            <Route path="/" element={<h1>Home</h1>}/>
+            <Route path="/" element={<Subscribe />}/>
             <Route path="/event" element={<EventPage/>}/>
             <Route path="/event/lesson/:slug" element={<EventPage/>}/>
         </Routes>

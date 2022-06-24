@@ -11,7 +11,7 @@ export function EventPage() {
         <div className="flex flex-col min-h-screen">
             <Header/>
             <main className="flex flex-1">
-                {slug ? <Video lessonSlug={slug}/> : <Video lessonSlug={"abertura"}/>}
+                {slug ? <Video lessonSlug={slug}/> : <Video lessonSlug={"opening"}/>}
                 <Sidebar/>
             </main>
         </div>
