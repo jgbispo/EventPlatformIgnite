@@ -37,7 +37,7 @@ export function Subscribe() {
                     </form>
                 </div>
             </div>
-            <img src="/src/assets/bg-code.png" className="mt-10" alt="bg-code.png"/>
+            <img src="https://user-images.githubusercontent.com/83095574/175466234-318a413f-cf10-4faf-a965-730d94f6afa0.png" className="mt-10" alt="bg-code.png"/>
         </div>
     )
 }
