@@ -1,4 +1,4 @@
-# Event Plataform Ignite
+# Event Platform Ignite
 
 Project developed during [@Rocketseat](https://www.rocketseat.com.br/) Ignite Lab event with the aim of improving programming skills using react and some other technologies.
 
