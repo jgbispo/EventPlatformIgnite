@@ -1,12 +1,17 @@
 import React, {useEffect} from 'react'
-import {EventPage} from "./pages/EventPage";
+import {Router} from "./Router";
+import {client} from "./lib/apollo";
+import {ApolloProvider} from '@apollo/client';
+import {BrowserRouter} from "react-router-dom";
 
 
 function App() {
     return (
-        <div>
-            <EventPage />
-        </div>
+        <ApolloProvider client={client}>
+            <BrowserRouter>
+                <Router/>
+            </BrowserRouter>
+        </ApolloProvider>
     )
 }
 
