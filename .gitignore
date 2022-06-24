@@ -26,3 +26,4 @@ dist-ssr
 # Plus
 
 **.lock
+.vercel
